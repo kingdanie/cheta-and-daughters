@@ -11,6 +11,7 @@
     "nuxt": "^3.0.0"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.0.13",
     "@nuxtjs/tailwindcss": "^6.2.0"
   }
 }
