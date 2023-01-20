@@ -1,8 +1,8 @@
 <template>
     <div class="w-full">
-        <div class="bg-cyan-500 p-2 flex">
+        <div class="bg-cyan-500 p-2 flex justify-between">
             <h4 class="text-white font-semibold">Agents</h4>
-            <div>search</div>
+            <button> <MagnifyingGlassIcon class="h-5 w-5 text-white" /></button>
         </div>
 
         <div class="bg-white">
@@ -47,13 +47,11 @@
                       </p>
                       <p class="text-gray-500 text-sm">
                         {{agents.location}}
-                        <BeakerIcon />
                       </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                    <h3>hi</h3>
                   <ChevronRightIcon class="h-5 w-5 text-gray-400 group-hover:text-gray-700" aria-hidden="true" />
                 </div>
               </div>
@@ -69,7 +67,7 @@
 
 <script>
 import { BuildingOffice2Icon, ChevronRightIcon } from '@heroicons/vue/24/outline'
-import { BeakerIcon } from "@heroicons/vue/24/solid";
+import { MagnifyingGlassIcon } from "@heroicons/vue/24/solid";
 const Tasks = [
   { name: 'All', href: '#', current: true },
   { name: 'Online', href: '#', current: false },
@@ -89,6 +87,7 @@ const agents =
 
 export default {
         name: "Agents",
+        components: { MagnifyingGlassIcon, BuildingOffice2Icon, ChevronRightIcon },
 data() {
     return {
         tabs: Tasks,

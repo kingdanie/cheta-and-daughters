@@ -5,7 +5,7 @@
         <div>RC1234689</div>
 </div>
 
-<div class="bg-cyan-600 text-white flex-1 space-y-1 h-full">
+<div class="bg-cyan-600 text-white flex-1 space-y-1 h-full pt-10">
     <!-- <div v-for="menu in Menu">
         <div class="p-5 hover:bg-cyan-400">
             <NuxtLink :to="menu.name"> <span> img </span> {{menu.name}} </NuxtLink>

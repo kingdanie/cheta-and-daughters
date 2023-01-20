@@ -37,13 +37,19 @@
               <div class="flex items-center py-5 px-4 sm:py-6 sm:px-0">
                 <div class="flex min-w-0 flex-1 items-center">
                   <div class="flex-shrink-0">
-                    <img class="h-12 w-12 rounded-full group-hover:opacity-75" :src="candidates.imageUrl" alt="" />
+                    <div class="bg-cyan-600 rounded-full text-white p-2 h-10 w-10  group-hover:opacity-75">
+                        <PlusIcon class="h-5 w-5 m-auto" />
+                    </div>
+                    <small>Assign
+                        Agents 
+                    </small>
+
                   </div>
                   <div class="min-w-0 flex-1 px-4">
                     <div>
                       <p class="truncate text-sm font-medium">{{ candidates.name }}</p>
                       <p class="mt-2 flex items-center text-sm text-gray-500">
-                        <EnvelopeIcon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-700" aria-hidden="true" />
+                        <BuildingOffice2Icon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-700" aria-hidden="true" />
                         <span class="truncate">{{ candidates.adress }}</span>
                       </p>
                       <p class="text-gray-500 text-sm">
@@ -56,7 +62,6 @@
                   </div>
                 </div>
                 <div>
-                    <h3>hi</h3>
                   <ChevronRightIcon class="h-5 w-5 text-gray-400 group-hover:text-gray-700" aria-hidden="true" />
                 </div>
               </div>
@@ -71,21 +76,9 @@
 </template>
 
 <script>
-// import {
-//   ArrowLongLeftIcon,
-//   ArrowLongRightIcon,
-//   CheckCircleIcon,
-//   CheckIcon,
-//   ChevronDownIcon,
-  
-//   EnvelopeIcon,
-//  MagnifyingGlassIcon,
- 
-  
-// } from '@heroicons/vue/20/solid'
 
 
-import { BuildingOffice2Icon, ChevronRightIcon } from '@heroicons/vue/24/outline'
+import { BuildingOffice2Icon, ChevronRightIcon, PlusIcon} from '@heroicons/vue/24/outline'
 
 const Tasks = [
   { name: 'Unassigned', href: '#', count: '24', current: true },
@@ -98,9 +91,6 @@ const candidates =
     name: 'Emily Selman',
     adress: '12b Emmanuel Street, Surulere Lagos',
     company: "Sterling Bank Plc",
-    imageUrl:
-      'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    applied: 'January 7, 2020',
     appliedDatetime: '2020-07-01T15:34:56',
 
   }
@@ -108,6 +98,8 @@ const candidates =
 
 export default {
         name: "Tasks",
+        components: { BuildingOffice2Icon, ChevronRightIcon, PlusIcon },
+
 data() {
     return {
         tabs: Tasks,

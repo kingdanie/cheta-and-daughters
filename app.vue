@@ -6,7 +6,7 @@
       <div class="lg:col-span-10 w-full h-full bg-red-200 mt-7">
         <div class="grid md:grid-cols-2 lg:grid-cols-3">
           <Tasks />
-          <div>Map</div>
+          <Maps />
          <Agents />
         </div>
       </div>
