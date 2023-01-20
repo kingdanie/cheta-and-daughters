@@ -16,10 +16,10 @@
 
           <div class="hidden sm:block">
             <div class="border-b border-gray-200">
-              <nav class="flex space-x-3" aria-label="Tabs">
+              <nav class="flex justify-between pr-5" aria-label="Tabs">
                 <a v-for="tab in tabs" :key="tab.name" :href="tab.href" :class="[tab.current ? 'border-cyan-500 text-cyan-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200', 'pl-5 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']">
                   {{ tab.name }}
-                  <span v-if="tab.count" :class="[tab.current ? 'text-cyan-600' : 'text-gray-900', 'hidden ml-2 font-medium md:inline-block']">{{ tab.count }}</span>
+                  <span v-if="tab.count" :class="[tab.current ? 'text-cyan-600' : 'text-gray-900', 'hidden font-medium md:inline-block']">{{ tab.count }}</span>
                 </a>
               </nav>
             </div>
@@ -34,13 +34,13 @@
         <li v-for="candidate in 24" :key="candidate">
 
             <a href="#" class="group block">
-              <div class="flex items-center py-5 px-4 sm:py-6 sm:px-0">
+              <div class="flex items-center py-5 px-2 sm:py-6 sm:px-0">
                 <div class="flex min-w-0 flex-1 items-center">
-                  <div class="flex-shrink-0">
-                    <div class="bg-cyan-600 rounded-full text-white p-2 h-10 w-10  group-hover:opacity-75">
+                  <div class="flex flex-col flex-shrink-0 items-center md:place-self-start">
+                    <div class="flex bg-cyan-600 rounded-full text-white p-1 h-8 w-8  group-hover:opacity-75">
                         <PlusIcon class="h-5 w-5 m-auto" />
                     </div>
-                    <small>Assign
+                    <small class="mt-2 w-1/2 text-xs text-gray-500">Assign
                         Agents 
                     </small>
 
@@ -49,15 +49,18 @@
                     <div>
                       <p class="truncate text-sm font-medium">{{ candidates.name }}</p>
                       <p class="mt-2 flex items-center text-sm text-gray-500">
-                        <BuildingOffice2Icon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-700" aria-hidden="true" />
                         <span class="truncate">{{ candidates.adress }}</span>
                       </p>
-                      <p class="text-gray-500 text-sm">
+                      <p class="text-gray-500 text-sm flex items-center mt-1">
+                        <BuildingOffice2Icon class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-700" aria-hidden="true" />
                         {{candidates.company}}
                       </p>
-                      <p class="text-sm text-blue-400">
+                      <p class=" mt-3 text-sm text-indigo-600 capitalize">
+                          {{ candidate }} day ago
+                      </p>
+                      <!-- <p class="text-sm text-blue-400">
                           <time :datetime="candidates.appliedDatetime">{{ candidates.applied }}</time>
-                        </p>
+                        </p> -->
                     </div>
                   </div>
                 </div>
@@ -88,7 +91,7 @@ const Tasks = [
 
 const candidates =
   {
-    name: 'Emily Selman',
+    name: 'Abiodun Olawale Solomon',
     adress: '12b Emmanuel Street, Surulere Lagos',
     company: "Sterling Bank Plc",
     appliedDatetime: '2020-07-01T15:34:56',
