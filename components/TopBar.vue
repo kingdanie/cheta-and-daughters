@@ -118,7 +118,11 @@ const navigation = [
 
 export default {
 name: "TopBars",
-components: { Bars3CenterLeftIcon, XMarkIcon, MagnifyingGlassIcon, ArrowLeftCircleIcon, ChevronDownIcon, BellIcon},
+components: { 
+  Bars3CenterLeftIcon, XMarkIcon, MagnifyingGlassIcon, 
+  ArrowLeftCircleIcon, ChevronDownIcon, BellIcon,
+  Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton,
+},
 
 data() {
     return {
