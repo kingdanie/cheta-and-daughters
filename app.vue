@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-full">
-    <!-- <TopBar /> -->
+    <TopBar />
     <main class="mx-auto lg:grid lg:grid-cols-12">
       <NavBar />
       <div class="lg:col-span-10 w-full h-full mt-7">

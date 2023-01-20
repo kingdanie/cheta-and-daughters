@@ -1,8 +1,7 @@
 <template>
         <!-- <div>Hello World, greetings for Nuxt</div> -->
    <!-- Navbar -->
-   <!-- <Disclosure as="nav" class="flex-shrink-0" > -->
-    <div class="flex-shrink-0" >
+   <Disclosure as="nav" class="flex-shrink-0" >
 
       <div class="mx-auto px-2 sm:px-4 lg:px-8 shadow">
         <div class="relative flex h-16 items-center justify-between">
@@ -80,8 +79,7 @@
         </div>
       </div>
 
-      <!-- <DisclosurePanel class="lg:hidden"> -->
-        <div class="lg:hidden">
+      <DisclosurePanel class="lg:hidden">
 
         <div class="space-y-1 px-2 pt-2 pb-3">
           <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'text-white bg-cyan-800' : 'text-cyan-200 hover:text-cyan-100 hover:bg-cyan-600', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
@@ -91,10 +89,8 @@
             <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block rounded-md px-3 py-2 text-base font-medium text-cyan-200 hover:bg-cyan-600 hover:text-cyan-100">{{ item.name }}</DisclosureButton>
           </div>
         </div>
-      </div>
-      <!-- </DisclosurePanel> -->
-      </div>
-    <!-- </Disclosure> -->
+      </DisclosurePanel>
+    </Disclosure>
 </template>
   
 <script>
