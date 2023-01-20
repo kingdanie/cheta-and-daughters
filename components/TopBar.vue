@@ -1,7 +1,9 @@
 <template>
         <!-- <div>Hello World, greetings for Nuxt</div> -->
    <!-- Navbar -->
-   <Disclosure as="nav" class="flex-shrink-0 bg-cyan-600" >
+   <!-- <Disclosure as="nav" class="flex-shrink-0" > -->
+    <div class="flex-shrink-0" >
+
       <div class="mx-auto px-2 sm:px-4 lg:px-8 shadow">
         <div class="relative flex h-16 items-center justify-between">
           <!-- Logo section -->
@@ -59,13 +61,13 @@
                     <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80" alt="" />
                   </MenuButton>
                 </div>
-                <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
+                <!-- <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
                   <MenuItems class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <MenuItem v-for="item in userNavigation" :key="item.name">
                       <a :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{ item.name }}</a>
                     </MenuItem>
                   </MenuItems>
-                </transition>
+                </transition> -->
               </Menu>
               <div class="flex items-center space-x-3">
                 <small class="font-medium text-cyan-800">Solomon</small>
@@ -78,7 +80,9 @@
         </div>
       </div>
 
-      <DisclosurePanel class="lg:hidden">
+      <!-- <DisclosurePanel class="lg:hidden"> -->
+        <div class="lg:hidden">
+
         <div class="space-y-1 px-2 pt-2 pb-3">
           <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'text-white bg-cyan-800' : 'text-cyan-200 hover:text-cyan-100 hover:bg-cyan-600', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
         </div>
@@ -87,8 +91,10 @@
             <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block rounded-md px-3 py-2 text-base font-medium text-cyan-200 hover:bg-cyan-600 hover:text-cyan-100">{{ item.name }}</DisclosureButton>
           </div>
         </div>
-      </DisclosurePanel>
-    </Disclosure>
+      </div>
+      <!-- </DisclosurePanel> -->
+      </div>
+    <!-- </Disclosure> -->
 </template>
   
 <script>
