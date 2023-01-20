@@ -1,7 +1,7 @@
 <template>
 <nav class="hidden md:col-span-2 xl:col-span-2 lg:block" aria-label="Sidebar">
-<div class="bg-cyan-700 p-5">
-        <h3>Chetas And Daughters Limited </h3>
+<div class="bg-cyan-700 p-5 text-cyan-100">
+        <h3 class="font-bold">Chetas And Daughters Limited </h3>
         <div>RC1234689</div>
 </div>
 
@@ -15,7 +15,7 @@
     <NuxtLink v-for="item in Menu" :key="item.name" :href="item.name" :class="[item.current ? 'bg-cyan-500 border-white text-white' : 'border-transparent text-gray-200 hover:bg-gray-50 hover:text-gray-900', 'group capitalize flex items-center px-3 py-2 text-sm font-medium border-l-4']">
           <component :is="item.icon" :class="[item.current ? 'text-gray-50' : 'text-gray-200 group-hover:text-gray-500', 'mr-3 flex-shrink-0 h-6 w-6']" aria-hidden="true" />
           {{ item.name }}
-        </NuxtLink>
+    </NuxtLink>
 </div>
 </nav>
 
