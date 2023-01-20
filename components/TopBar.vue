@@ -19,18 +19,26 @@
 
           <!-- Search section -->
           <div class="flex flex-1 justify-center lg:justify-between">
-            <div class="w-full px-2 lg:px-6">
+            <div class="w-full px-2 lg:px-10">
               <label for="search" class="sr-only">Search projects</label>
               <div class="relative text-gray-200 focus-within:text-gray-400">
+                <!-- <SearchSelect /> -->
+                <button class=" absolute inset-y-0 left-0 flex items-center text-gray-300 pl-3 border-r-2">
+
+                  All
+                  <ChevronDownIcon class="pl-3 text-gray-400 h-10 w-10" />
+                </button>
                       <input id="search" name="search" 
                                 class="
                                         block w-full rounded-md border border-transparent 
-                                        bg-gray-300 bg-opacity-25 py-2 pl-10 pr-3 leading-5 
+                                        bg-gray-300 bg-opacity-25 py-2 pl-20 pr-3 leading-5 
                                         text-gray-100 placeholder-gray-400 focus:bg-gray-200 
                                         focus:text-gray-900 focus:placeholder-gray-600 
-                                        focus:outline-none focus:ring-0 sm:text-sm font-semibold
+                                        focus:outline-none focus:ring-0 sm:text-sm
                                 " 
-                                placeholder="Search for anything here" type="search" 
+                                placeholder="Search for anything here" 
+                                type="search" 
+                                autocomplete="off"
                         />
                       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                         <MagnifyingGlassIcon class="h-5 w-5 text-gray-500 hover:text-gray-400" aria-hidden="true" />
@@ -53,27 +61,25 @@
                 <BellIcon class="h-6 w-6 text-cyan-400 "/>
               </div>
               <!-- Profile dropdown -->
-              <Menu as="div" class="relative ml-4 flex-shrink-0">
+              <div class="flex rounded-full">
+                    <img class="h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80" alt="profile image" />
+              </div>
+                <Menu as="div" class="relative flex-shrink-0">
                 <div>
-                  <MenuButton class="flex rounded-full bg-cyan-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-700">
+                  <MenuButton class="flex items-center space-x-3 text-sm">
+                    <small class="font-medium text-cyan-800">Solomon</small>
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80" alt="" />
+                    <ChevronDownIcon class="h-4 w-4 font-medium text-cyan-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-700"/>
                   </MenuButton>
                 </div>
-                <!-- <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
+                <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
                   <MenuItems class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <MenuItem v-for="item in userNavigation" :key="item.name">
                       <a :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{ item.name }}</a>
                     </MenuItem>
                   </MenuItems>
-                </transition> -->
+                </transition>
               </Menu>
-              <div class="flex items-center space-x-3">
-                <small class="font-medium text-cyan-800">Solomon</small>
-                <NuxtLink to="#">
-                        <ChevronDownIcon class="h-4 w-4 font-medium text-cyan-800"/>
-                </NuxtLink>
-                </div>
             </div>
           </div>
         </div>
@@ -122,6 +128,7 @@ components: {
   Bars3CenterLeftIcon, XMarkIcon, MagnifyingGlassIcon, 
   ArrowLeftCircleIcon, ChevronDownIcon, BellIcon,
   Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton,
+  MenuItem, MenuItems,
 },
 
 data() {
