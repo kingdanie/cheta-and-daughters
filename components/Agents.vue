@@ -1,8 +1,27 @@
 <template>
     <div class="w-full">
-        <div class="bg-cyan-500 p-2 flex justify-between">
+        <div class="bg-cyan-500 p-2 flex items-center justify-between">
             <h4 class="text-white font-semibold">Agents</h4>
-            <button> <MagnifyingGlassIcon class="h-5 w-5 text-white" /></button>
+            
+              <div v-if="showSearch" class="w-full px-2 lg:px-5">
+              <label for="search" class="sr-only">Search agents</label>
+              <div class="relative text-white focus-within:text-white">
+                      <input id="search-agent" name="search-agent" 
+                                class="
+                                        block w-full rounded-md border border-transparent 
+                                        bg-white bg-opacity-25 px-3 leading-5 
+                                        text-white placeholder-gray-400 focus:bg-gray-200 
+                                        focus:text-gray-900 focus:placeholder-gray-600 
+                                        focus:outline-none focus:ring-0 sm:text-sm
+                                " 
+                                placeholder="Search agents" 
+                                type="search" 
+                                autocomplete="off"
+                        />
+              </div>
+            </div>
+            
+            <button @click="toggleSearch()"> <MagnifyingGlassIcon class="h-5 w-5 text-white hover:text-cyan-200" /></button>
         </div>
 
         <div class="bg-white">
@@ -19,6 +38,7 @@
             <div class="border-b border-gray-200">
               <nav class="flex flex justify-between" aria-label="Tabs">
                 <a v-for="tab in tabs" :key="tab.name" :href="tab.href" :class="[tab.current ? 'border-cyan-500 text-cyan-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200', 'pr-5 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']">
+                  <span v-if="tab.name !== 'All'" :class="[tab.bgColor, 'w-5 h-5 rounded-full']" aria-hidden="true"> _ </span>
                   {{ tab.name }}
                 </a>
               </nav>
@@ -69,9 +89,9 @@
 import { BuildingOffice2Icon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 import { MagnifyingGlassIcon } from "@heroicons/vue/24/solid";
 const Tasks = [
-  { name: 'All', href: '#', current: true },
-  { name: 'Online', href: '#', current: false },
-  { name: 'Offline', href: '#', current: false },
+  { name: 'All', href: '#', current: true,  bgColor: '' },
+  { name: 'Online', href: '#', current: false,  bgColor: 'bg-green-600' },
+  { name: 'Offline', href: '#', current: false, bgColor: 'bg-red-600' },
 ]
 
 const agents =
@@ -92,7 +112,13 @@ data() {
     return {
         tabs: Tasks,
         agents: agents,
+        showSearch: false,
     }
-}
+},
+methods: {
+    toggleSearch() {
+      this.showSearch = !this.showSearch;
+    },
+  },
 }
 </script>
