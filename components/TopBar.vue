@@ -57,8 +57,9 @@
           <!-- Links section -->
           <div class="hidden lg:block md:w-48 space-x-5">
             <div class="flex items-center justify-between">
-              <div class="flex rounded-lg p-2 bg-cyan-50 hover:bg-cyan-100">
-                <BellIcon class="h-6 w-6 text-cyan-400 "/>
+              <div class="relative flex rounded-lg p-2 bg-cyan-50 hover:bg-cyan-100">
+                <BellIcon class="h-5 w-5 text-cyan-600 "/>
+                <span class="absolute text-xs top-1 right-0 h-3 w-3 p-2 rounded-full bg-red-600 text-white flex justify-center items-center items"> 4 <span class="sr-only">unread messages</span></span>
               </div>
               <!-- Profile dropdown -->
               <div class="flex rounded-full">
