@@ -37,8 +37,8 @@
           <div class="hidden sm:block">
             <div class="border-b border-gray-200">
               <nav class="flex flex justify-between" aria-label="Tabs">
-                <a v-for="tab in tabs" :key="tab.name" :href="tab.href" :class="[tab.current ? 'border-cyan-500 text-cyan-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200', 'pr-5 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']">
-                  <span v-if="tab.name !== 'All'" :class="[tab.bgColor, 'w-5 h-5 rounded-full']" aria-hidden="true"> _ </span>
+                <a v-for="tab in tabs" :key="tab.name" :href="tab.href" :class="[tab.current ? 'border-cyan-500 text-cyan-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200', 'space-x-3 pr-5 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']">
+                  <span v-if="tab.name !== 'All'" :class="[tab.bgColor, 'w-2.5 h-2.5 px-2 mr-2 rounded-full']" aria-hidden="true"></span>
                   {{ tab.name }}
                 </a>
               </nav>
