@@ -1,5 +1,4 @@
 <template>
-        <!-- <div>Hello World, greetings for Nuxt</div> -->
    <!-- Navbar -->
    <Disclosure as="nav" class="flex-shrink-0" >
 
@@ -41,7 +40,7 @@
                                 autocomplete="off"
                         />
                       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                        <MagnifyingGlassIcon class="h-5 w-5 text-gray-500 hover:text-gray-400" aria-hidden="true" />
+                        <MagnifyingGlassIcon class="hidden md:block h-5 w-5 text-gray-500 hover:text-gray-400" aria-hidden="true" />
                       </div>
               </div>
             </div>
