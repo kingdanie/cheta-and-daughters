@@ -1,5 +1,9 @@
 # Cheta and Daughters Web app Demo
+frontend implementation of a proposed project. 
 
+
+# To be added
+All backend functionalities to be added soon
 
 # Nuxt 3 Minimal Starter
 
